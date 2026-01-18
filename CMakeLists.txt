@@ -15,12 +15,25 @@ endif()
 # 在下面添加源代码文件，一行一个
 add_executable(${PROJECT_NAME}
   src/main.c
+  src/device.c
+  src/uenv.c
+  src/config_registry.c
+  src/config_state.c
+  src/ui.c
+
+
+  anbui/pl_linux.c
+  anbui/ad_ui.c
+  anbui/ad_obj.c
+  anbui/ad_text.c
+  anbui/anbui.c
 )
 
 # 在下面添加头文件目录，一行一个
 target_include_directories(${PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/src
+  ${CMAKE_CURRENT_SOURCE_DIR}/anbui
 )
 
 target_link_libraries(${PROJECT_NAME}
